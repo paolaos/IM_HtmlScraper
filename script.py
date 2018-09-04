@@ -16,7 +16,6 @@ Educational purposes only.
 with open('whales.csv', mode="w") as csvFile:
     # CSV configuration: item delimiter is with commas, row delimiter is with enter space. Single quotes for strings.
     csvWriter = csv.writer(csvFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    # This makes sure to iterate through all the pages
     # Requests the page from which the data will be extracted
     page = requests.get("http://data.marinemammals.gov.au/nmmdb/events/?event_class=[Sighting]&spatial_bounds=112.14844,-44.11177,155.03906,-9.69318&page=0&size=10000")
     # Extracts and loads the page's text in order to make way to the table
